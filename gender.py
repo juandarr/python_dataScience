@@ -1,4 +1,6 @@
 from sklearn import tree,svm    
+from sklearn.linear_model import SGDClassifier
+from sklearn.naive_bayes import GaussianNB
 import numpy as np
 #We are gonna use a decision tree here
 
@@ -10,7 +12,9 @@ Y = ['male','female','female','female','male','male','male','female','male','fem
 
 #clf = tree.DecisionTreeClassifier()
 
-clf = svm.SVC()
+#clf = svm.SVC()
+#clf = SGDClassifier(loss='hinge', penalty='l2')
+clf = GaussianNB()
 
 output = clf.fit(X,Y)
 
